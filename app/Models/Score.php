@@ -5,16 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subject extends Model
+class Score extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'avatar',
-        'description',
-        'school_year'
+        'student_id',
+        'teacher_id',
+        'subject_id',
+        'score',
+        'description'
     ];
 
     public $timestamps = true;
+
+    protected $attributes = [
+        'score' => 0
+    ];
 }

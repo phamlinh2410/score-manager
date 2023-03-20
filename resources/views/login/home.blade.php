@@ -23,7 +23,7 @@
         </tr>
         <tr>
             <td><a href="#">Tìm kiếm</a></td>
-            <td><a href="#">Tìm kiếm</a></td>
+            <td><a href="{{ route('teacher.index') }}">Tìm kiếm</a></td>
             <td><a href="{{ route('subject.index') }}">Tìm kiếm</a></td>
             <td><a href="#">Tìm kiếm</a></td>
             <td><a href="#">Tìm kiếm</a></td>

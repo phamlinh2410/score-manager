@@ -30,7 +30,7 @@ class SubjectController extends Controller
         ];
 
         $validator = Validator::make($request->all(), $rules);
-        if($validator->failed()){
+        if($validator->fails()){
             return redirect(route('subject.registration-form'))->withErrors($validator)->withInput();
         } else {
             $datas = [

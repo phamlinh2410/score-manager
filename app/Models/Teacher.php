@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Subject extends Model
+class Teacher extends Model
 {
     use HasFactory;
 
@@ -13,7 +13,8 @@ class Subject extends Model
         'name',
         'avatar',
         'description',
-        'school_year'
+        'specialized',
+        'degree'
     ];
 
     public $timestamps = true;

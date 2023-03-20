@@ -22,7 +22,6 @@ class LoginController extends Controller
         if($validator->fails()) {
             return redirect('login')->withErrors($validator)->withInput();
         } else {
-            dd("ok");
             $email = $request->input('email');
             $password = $request->input('password');
             if(Auth::attempt(['email' => $email, 'password' => $password])) {

@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -53,5 +54,12 @@ Route::middleware(['auth.login'])->group(function(){
     Route::get('/edit/{id}', [SubjectController::class, 'edit'])->name('subject.edit');
 });
 
+Route::middleware(['auth.login'])->prefix('teacher')->group(function() {
+    Route::get('', [TeacherController::class, 'index'])->name('teacher.index');
+    Route::get('/create', [TeacherController::class, 'create'])->name('teacher.create');
+    Route::get('/edit/{id}', [TeacherController::class, 'editForm'])->name('teacher.edit-form');
+    Route::put('/edit/{id}', [TeacherController::class, 'edit'])->name('teacher.edit');
+    Route::delete('/delete/{id}', [TeacherController::class, 'delete'])->name('teacher.delete');
+});
 
 
